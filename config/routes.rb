@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :prices
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :prices, only: :index
+  get 'prices/profit', to: 'prices#biggest'
 end
